@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 160" width="520" height="160">
+  <defs>
+    <!-- Main cyan-to-purple gradient -->
+    <linearGradient id="grad-main" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5ff"/>
+      <stop offset="100%" stop-color="#a259ff"/>
+    </linearGradient>
+
+    <!-- Subtle fill gradient for hex -->
+    <linearGradient id="grad-fill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#a259ff" stop-opacity="0.08"/>
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Soft shadow -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#00e5ff" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- ── DARK BACKGROUND (comment out for transparent) ── -->
+  <rect width="520" height="160" rx="16" fill="#060912"/>
+
+  <!-- ── ICON MARK (80x80 centered at x=55, y=80) ── -->
+  <g transform="translate(30, 20)" filter="url(#shadow)">
+
+    <!-- Hexagon outer shell -->
+    <polygon
+      points="60,4 108,28 108,76 60,100 12,76 12,28"
+      fill="url(#grad-fill)"
+      stroke="url(#grad-main)"
+      stroke-width="1.8"
+      opacity="0.85"
+    />
+
+    <!-- Inner hex ring, subtle -->
+    <polygon
+      points="60,16 94,34 94,70 60,88 26,70 26,34"
+      fill="none"
+      stroke="url(#grad-main)"
+      stroke-width="0.7"
+      opacity="0.3"
+    />
+
+    <!-- Center glow circle -->
+    <circle cx="60" cy="52" r="18" fill="url(#grad-main)" opacity="0.1"/>
+
+    <!-- Stylised "P" letter path -->
+    <path
+      d="M44 36 L44 68 M44 36 L57 36 C64.7 36 71 42.3 71 50 C71 57.7 64.7 64 57 64 L44 64"
+      stroke="url(#grad-main)"
+      stroke-width="5.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+      filter="url(#glow)"
+    />
+
+    <!-- Sync arrow right (cyan) -->
+    <polyline
+      points="80,34 88,42 80,50"
+      stroke="#00e5ff"
+      stroke-width="3"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+      opacity="0.9"
+    />
+
+    <!-- Sync arrow left (purple) -->
+    <polyline
+      points="40,54 32,62 40,70"
+      stroke="#a259ff"
+      stroke-width="3"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+      opacity="0.9"
+    />
+
+    <!-- Center dot -->
+    <circle cx="60" cy="50" r="4.5" fill="url(#grad-main)" filter="url(#glow)"/>
+
+    <!-- Corner circuit dots -->
+    <circle cx="12" cy="28" r="2" fill="#00e5ff" opacity="0.6"/>
+    <circle cx="108" cy="28" r="2" fill="#a259ff" opacity="0.6"/>
+    <circle cx="60" cy="4" r="2" fill="url(#grad-main)" opacity="0.5"/>
+    <circle cx="60" cy="100" r="2" fill="url(#grad-main)" opacity="0.5"/>
+  </g>
+
+  <!-- ── WORDMARK ── -->
+  <!-- "PAI" in white/light -->
+  <text
+    x="158"
+    y="108"
+    font-family="'Syne', 'Trebuchet MS', sans-serif"
+    font-weight="800"
+    font-size="64"
+    letter-spacing="-3"
+    fill="#e8edf8"
+  >PAI</text>
+
+  <!-- "Sync" gradient -->
+  <defs>
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e5ff"/>
+      <stop offset="100%" stop-color="#a259ff"/>
+    </linearGradient>
+  </defs>
+  <text
+    x="325"
+    y="108"
+    font-family="'Syne', 'Trebuchet MS', sans-serif"
+    font-weight="800"
+    font-size="64"
+    letter-spacing="-3"
+    fill="url(#text-grad)"
+  >Sync</text>
+
+  <!-- Tagline -->
+  <text
+    x="158"
+    y="132"
+    font-family="'Outfit', 'Segoe UI', sans-serif"
+    font-weight="400"
+    font-size="15"
+    letter-spacing="3.5"
+    fill="#6b7a99"
+    text-transform="uppercase"
+  >AI-POWERED AD OPTIMIZATION</text>
+
+  <!-- Subtle divider line between icon and wordmark -->
+  <line x1="148" y1="30" x2="148" y2="130" stroke="url(#grad-main)" stroke-width="1" opacity="0.2"/>
+</svg>

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5ff"/>
+      <stop offset="100%" stop-color="#a259ff"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#a259ff" stop-opacity="0.08"/>
+    </linearGradient>
+    <filter id="glow2">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="shadow2">
+      <feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#00e5ff" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="60" cy="60" r="58" fill="none" stroke="url(#g1)" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Inner glow circle -->
+  <circle cx="60" cy="60" r="42" fill="url(#g2)"/>
+
+  <!-- Hexagon -->
+  <polygon
+    points="60,10 103,32.5 103,77.5 60,100 17,77.5 17,32.5"
+    fill="none"
+    stroke="url(#g1)"
+    stroke-width="2"
+    opacity="0.7"
+    filter="url(#shadow2)"
+  />
+
+  <!-- Inner hex -->
+  <polygon
+    points="60,22 89,37.5 89,68.5 60,84 31,68.5 31,37.5"
+    fill="none"
+    stroke="url(#g1)"
+    stroke-width="0.8"
+    opacity="0.25"
+  />
+
+  <!-- P letter -->
+  <path
+    d="M40 36 L40 72 M40 36 L55 36 C63.8 36 71 43.2 71 52 C71 60.8 63.8 68 55 68 L40 68"
+    stroke="url(#g1)"
+    stroke-width="6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+    filter="url(#glow2)"
+  />
+
+  <!-- Right sync arrow -->
+  <polyline points="83,36 93,46 83,56" stroke="#00e5ff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Left sync arrow -->
+  <polyline points="37,62 27,72 37,82" stroke="#a259ff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Center dot -->
+  <circle cx="60" cy="52" r="5" fill="url(#g1)" filter="url(#glow2)"/>
+
+  <!-- Corner dots -->
+  <circle cx="17" cy="32.5" r="2.5" fill="#00e5ff" opacity="0.7"/>
+  <circle cx="103" cy="32.5" r="2.5" fill="#a259ff" opacity="0.7"/>
+  <circle cx="60" cy="10" r="2.5" fill="url(#g1)" opacity="0.6"/>
+  <circle cx="60" cy="100" r="2.5" fill="url(#g1)" opacity="0.6"/>
+  <circle cx="17" cy="77.5" r="2" fill="#a259ff" opacity="0.4"/>
+  <circle cx="103" cy="77.5" r="2" fill="#00e5ff" opacity="0.4"/>
+</svg>
