@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — PAISync</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #060912;
+    --bg2: #0b1120;
+    --bg3: #0f1829;
+    --cyan: #00e5ff;
+    --purple: #a259ff;
+    --text: #e8edf8;
+    --muted: #6b7a99;
+    --border: rgba(0,229,255,0.12);
+    --card: rgba(15,24,41,0.9);
+    --gradient: linear-gradient(135deg, #00e5ff, #a259ff);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 5%;
+    background: rgba(6,9,18,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+  .logo-svg { width: 38px; height: 38px; }
+  .logo-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .nav-back {
+    font-size: 0.875rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: var(--cyan); }
+
+  /* MAIN */
+  main {
+    flex: 1;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 5rem 5% 6rem;
+    width: 100%;
+  }
+
+  .page-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--cyan);
+    background: rgba(0,229,255,0.08);
+    border: 1px solid rgba(0,229,255,0.18);
+    padding: 0.28rem 0.85rem;
+    border-radius: 50px;
+    margin-bottom: 1.2rem;
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 0.8rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .page-sub {
+    color: var(--muted);
+    font-size: 1.05rem;
+    margin-bottom: 3.5rem;
+    max-width: 520px;
+    line-height: 1.7;
+  }
+
+  /* GRID */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  /* LEFT — info cards */
+  .contact-cards { display: flex; flex-direction: column; gap: 1rem; }
+
+  .contact-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.4rem 1.6rem;
+    transition: border-color 0.2s;
+  }
+  .contact-card:hover { border-color: rgba(0,229,255,0.25); }
+
+  .card-icon { font-size: 1.4rem; margin-bottom: 0.5rem; }
+
+  .card-label {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+  }
+
+  .card-value {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+  .card-value a { color: var(--cyan); text-decoration: none; }
+  .card-value a:hover { text-decoration: underline; }
+
+  /* RIGHT — form */
+  .contact-form-wrap {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.2rem;
+  }
+
+  .form-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 1.6rem;
+    color: var(--text);
+  }
+
+  .form-row { margin-bottom: 1.2rem; }
+  .form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.45rem;
+  }
+
+  input, textarea, select {
+    width: 100%;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: var(--text);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+  }
+  input:focus, textarea:focus, select:focus {
+    border-color: rgba(0,229,255,0.4);
+    box-shadow: 0 0 0 3px rgba(0,229,255,0.06);
+  }
+  input::placeholder, textarea::placeholder { color: var(--muted); opacity: 0.6; }
+  textarea { resize: vertical; min-height: 130px; }
+
+  select option { background: var(--bg2); color: var(--text); }
+
+  .btn-submit {
+    width: 100%;
+    background: var(--cyan);
+    color: var(--bg);
+    border: none;
+    border-radius: 8px;
+    padding: 0.9rem 2rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s;
+    margin-top: 0.5rem;
+    box-shadow: 0 0 30px rgba(0,229,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 50px rgba(0,229,255,0.35);
+  }
+
+  /* SUCCESS STATE */
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  .form-success .success-icon { font-size: 3rem; margin-bottom: 1rem; }
+  .form-success h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+    color: var(--text);
+  }
+  .form-success p { color: var(--muted); font-size: 0.95rem; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 1.8rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--cyan); }
+  .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+  @media (max-width: 768px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .form-row-2 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <svg class="logo-svg" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="lg1" x1="0" y1="0" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#00e5ff"/>
+          <stop offset="100%" stop-color="#a259ff"/>
+        </linearGradient>
+      </defs>
+      <path d="M21 2L38 11.5V30.5L21 40L4 30.5V11.5L21 2Z" stroke="url(#lg1)" stroke-width="1.5" fill="none" opacity="0.6"/>
+      <circle cx="21" cy="21" r="8" fill="url(#lg1)" opacity="0.15"/>
+      <path d="M14 14H21C23.8 14 26 16.2 26 19C26 21.8 23.8 24 21 24H14V28" stroke="url(#lg1)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path d="M30 14L33 17L30 20" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M12 22L9 25L12 28" stroke="#a259ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="21" cy="19" r="2" fill="url(#lg1)"/>
+    </svg>
+    <span class="logo-name">PAISync</span>
+  </a>
+  <a href="/" class="nav-back">← Back to home</a>
+</nav>
+
+<main>
+  <div class="page-tag">Get In Touch</div>
+  <h1>Contact Us</h1>
+  <p class="page-sub">Have a question about PAISync, need a demo, or want to discuss enterprise pricing? We'll get back to you within one business day.</p>
+
+  <div class="contact-grid">
+
+    <!-- LEFT: contact info cards -->
+    <div class="contact-cards">
+
+      <div class="contact-card">
+        <div class="card-icon">🏢</div>
+        <div class="card-label">Headquarters</div>
+        <div class="card-value">
+          PAISync, Inc.<br>
+          142 N. Milpitas Blvd #169<br>
+          Milpitas, CA 95035<br>
+          United States
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="card-icon">✉️</div>
+        <div class="card-label">General Inquiries</div>
+        <div class="card-value">
+          <a href="mailto:hello@paisync.com">hello@paisync.com</a><br>
+          Response within 1 business day
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="card-icon">🔒</div>
+        <div class="card-label">Privacy &amp; Legal</div>
+        <div class="card-value">
+          Privacy: <a href="mailto:privacy@paisync.com">privacy@paisync.com</a><br>
+          Legal: <a href="mailto:legal@paisync.com">legal@paisync.com</a>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="card-icon">💼</div>
+        <div class="card-label">Business &amp; Partnerships</div>
+        <div class="card-value">
+          <a href="mailto:admin@paisync.com">admin@paisync.com</a><br>
+          For enterprise plans and agency partnerships
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div class="card-icon">👥</div>
+        <div class="card-label">Careers</div>
+        <div class="card-value">
+          <a href="mailto:hr@paisync.com">hr@paisync.com</a><br>
+          We're building something special — come join us
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: contact form -->
+    <div class="contact-form-wrap">
+      <div class="form-title">Send us a message</div>
+
+      <form id="contactForm" onsubmit="handleSubmit(event)">
+        <div class="form-row-2">
+          <div>
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Jane" required>
+          </div>
+          <div>
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Smith" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="email">Work Email</label>
+          <input type="email" id="email" name="email" placeholder="jane@company.com" required>
+        </div>
+
+        <div class="form-row">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" placeholder="Acme Corp">
+        </div>
+
+        <div class="form-row">
+          <label for="subject">What can we help with?</label>
+          <select id="subject" name="subject">
+            <option value="">Select a topic…</option>
+            <option value="demo">Request a demo</option>
+            <option value="pricing">Pricing &amp; plans</option>
+            <option value="enterprise">Enterprise / agency inquiry</option>
+            <option value="api">API &amp; integration questions</option>
+            <option value="support">Technical support</option>
+            <option value="privacy">Privacy or data request</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us a bit about what you're working on…" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">
+          Send Message
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <div class="success-icon">✅</div>
+        <h3>Message received!</h3>
+        <p>Thanks for reaching out. We'll get back to you at your email address within one business day.</p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div>© 2026 PAISync, Inc. · 142 N. Milpitas Blvd #169, Milpitas, CA 95035</div>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/terms">Terms of Service</a>
+    <a href="/contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+
+    // Build mailto link with form data
+    const firstName = document.getElementById('firstName').value;
+    const lastName  = document.getElementById('lastName').value;
+    const email     = document.getElementById('email').value;
+    const company   = document.getElementById('company').value;
+    const subject   = document.getElementById('subject').value;
+    const message   = document.getElementById('message').value;
+
+    const body = `Name: ${firstName} ${lastName}%0AEmail: ${email}%0ACompany: ${company}%0ATopic: ${subject}%0A%0AMessage:%0A${encodeURIComponent(message)}`;
+    window.location.href = `mailto:hello@paisync.com?subject=PAISync Contact: ${encodeURIComponent(subject || 'General Inquiry')}&body=${body}`;
+
+    // Show success state
+    form.style.display = 'none';
+    success.style.display = 'block';
+  }
+</script>
+</body>
+</html>
