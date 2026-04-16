@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">Coming Soon — PAISync</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #060912;
+    --bg2: #0b1120;
+    --cyan: #00e5ff;
+    --purple: #a259ff;
+    --text: #e8edf8;
+    --muted: #6b7a99;
+    --border: rgba(0,229,255,0.12);
+    --gradient: linear-gradient(135deg, #00e5ff, #a259ff);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 5%;
+    background: rgba(6,9,18,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+  .logo-svg { width: 38px; height: 38px; }
+  .logo-name {
+    font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.4rem;
+    letter-spacing: -0.02em;
+    background: var(--gradient); -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .nav-back { font-size: 0.875rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .nav-back:hover { color: var(--cyan); }
+
+  /* MAIN */
+  main {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    padding: 5rem 5%;
+  }
+
+  .center {
+    text-align: center;
+    max-width: 560px;
+  }
+
+  /* animated icon */
+  .icon-wrap {
+    width: 88px; height: 88px;
+    border-radius: 22px;
+    background: rgba(0,229,255,0.06);
+    border: 1px solid rgba(0,229,255,0.18);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 2rem;
+    font-size: 2.4rem;
+    animation: float 4s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .page-tag {
+    display: inline-block;
+    font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--cyan);
+    background: rgba(0,229,255,0.08); border: 1px solid rgba(0,229,255,0.18);
+    padding: 0.28rem 0.85rem; border-radius: 50px;
+    margin-bottom: 1.2rem;
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    letter-spacing: -0.03em; line-height: 1.1;
+    margin-bottom: 1rem;
+    background: var(--gradient); -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; background-clip: text;
+  }
+
+  .desc {
+    color: var(--muted); font-size: 1.05rem;
+    line-height: 1.75; margin-bottom: 2.5rem;
+  }
+
+  /* notify form */
+  .notify-form {
+    display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+  .notify-form input {
+    flex: 1; min-width: 220px;
+    background: rgba(0,0,0,0.3); border: 1px solid var(--border);
+    border-radius: 8px; padding: 0.75rem 1.1rem;
+    color: var(--text); font-family: 'Outfit', sans-serif; font-size: 0.95rem;
+    outline: none; transition: border-color 0.2s;
+  }
+  .notify-form input:focus { border-color: rgba(0,229,255,0.4); }
+  .notify-form input::placeholder { color: var(--muted); opacity: 0.6; }
+  .notify-btn {
+    background: var(--cyan); color: var(--bg);
+    border: none; border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-family: 'Outfit', sans-serif; font-size: 0.95rem; font-weight: 600;
+    cursor: pointer; transition: all 0.25s;
+    white-space: nowrap;
+    box-shadow: 0 0 24px rgba(0,229,255,0.2);
+  }
+  .notify-btn:hover { transform: translateY(-2px); box-shadow: 0 0 40px rgba(0,229,255,0.35); }
+
+  .notify-success {
+    display: none;
+    background: rgba(0,229,255,0.05); border: 1px solid rgba(0,229,255,0.15);
+    border-radius: 10px; padding: 0.85rem 1.2rem;
+    font-size: 0.9rem; color: var(--cyan);
+    margin-bottom: 2.5rem;
+  }
+
+  /* back links */
+  .back-links {
+    display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+  }
+  .back-links a {
+    font-size: 0.9rem; color: var(--muted); text-decoration: none;
+    display: flex; align-items: center; gap: 0.35rem;
+    transition: color 0.2s;
+  }
+  .back-links a:hover { color: var(--cyan); }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 1.8rem 5%;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+    font-size: 0.82rem; color: var(--muted);
+  }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--cyan); }
+  .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <svg class="logo-svg" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="lg1" x1="0" y1="0" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#00e5ff"/>
+          <stop offset="100%" stop-color="#a259ff"/>
+        </linearGradient>
+      </defs>
+      <path d="M21 2L38 11.5V30.5L21 40L4 30.5V11.5L21 2Z" stroke="url(#lg1)" stroke-width="1.5" fill="none" opacity="0.6"/>
+      <circle cx="21" cy="21" r="8" fill="url(#lg1)" opacity="0.15"/>
+      <path d="M14 14H21C23.8 14 26 16.2 26 19C26 21.8 23.8 24 21 24H14V28" stroke="url(#lg1)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path d="M30 14L33 17L30 20" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M12 22L9 25L12 28" stroke="#a259ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="21" cy="19" r="2" fill="url(#lg1)"/>
+    </svg>
+    <span class="logo-name">PAISync</span>
+  </a>
+  <a href="/" class="nav-back">← Back to home</a>
+</nav>
+
+<main>
+  <div class="center">
+    <div class="icon-wrap" id="pageIcon">🚧</div>
+    <div class="page-tag" id="pageTag">Coming Soon</div>
+    <h1 id="pageHeading">We're working on it</h1>
+    <p class="desc" id="pageDesc">
+      This page is actively being built. Leave your email and we'll notify you the moment it goes live.
+    </p>
+
+    <form class="notify-form" id="notifyForm" onsubmit="handleNotify(event)">
+      <input type="email" id="notifyEmail" placeholder="your@email.com" required>
+      <button type="submit" class="notify-btn">Notify me →</button>
+    </form>
+    <div class="notify-success" id="notifySuccess">
+      ✓ You're on the list — we'll email you when this goes live.
+    </div>
+
+    <div class="back-links">
+      <a href="/">← Home</a>
+      <a href="#features" onclick="window.location='/#features'">Features</a>
+      <a href="/contact">Contact Us</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div>© 2026 PAISync, Inc. · 142 N. Milpitas Blvd #169, Milpitas, CA 95035</div>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/terms">Terms of Service</a>
+    <a href="/contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+  // Page-specific content based on ?page= query param
+  const pages = {
+    blog: {
+      icon: '✍️',
+      tag: 'Blog',
+      heading: 'Blog coming soon',
+      desc: 'We\'re writing guides on AI-driven ad optimization, cross-platform campaign strategy, and performance marketing best practices. Leave your email to get the first posts delivered.'
+    },
+    docs: {
+      icon: '📖',
+      tag: 'Documentation',
+      heading: 'Docs in progress',
+      desc: 'Full API documentation, integration guides, and platform walkthroughs are being finalized alongside our product launch. Enter your email and we\'ll send you access when they\'re ready.'
+    },
+    api: {
+      icon: '⚙️',
+      tag: 'API Reference',
+      heading: 'API reference coming soon',
+      desc: 'Detailed API endpoint documentation, authentication guides, and code examples are being prepared. Leave your email and we\'ll notify you at launch.'
+    },
+    careers: {
+      icon: '🚀',
+      tag: 'Careers',
+      heading: 'We\'re hiring',
+      desc: 'PAISync is growing and we\'re actively building our team. We\'re looking for engineers, product designers, and growth marketers who are passionate about AI and advertising technology. Send your resume to <a href="mailto:hr@paisync.com" style="color:var(--cyan)">hr@paisync.com</a>.',
+      hideForm: true
+    }
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const key = params.get('page');
+  const config = pages[key];
+
+  if (config) {
+    document.getElementById('pageTitle').textContent = (config.tag || 'Coming Soon') + ' — PAISync';
+    document.getElementById('pageIcon').textContent = config.icon;
+    document.getElementById('pageTag').textContent = config.tag || 'Coming Soon';
+    document.getElementById('pageHeading').textContent = config.heading;
+    document.getElementById('pageDesc').innerHTML = config.desc;
+    if (config.hideForm) {
+      document.getElementById('notifyForm').style.display = 'none';
+    }
+  }
+
+  function handleNotify(e) {
+    e.preventDefault();
+    const email = document.getElementById('notifyEmail').value;
+    // Open mailto so the notification goes to hello@
+    window.location.href = `mailto:hello@paisync.com?subject=Notify me: ${encodeURIComponent(document.getElementById('pageTag').textContent)}&body=Please notify me when this is ready.%0A%0AEmail: ${encodeURIComponent(email)}`;
+    document.getElementById('notifyForm').style.display = 'none';
+    document.getElementById('notifySuccess').style.display = 'block';
+  }
+</script>
+</body>
+</html>
