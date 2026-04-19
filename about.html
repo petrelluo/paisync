@@ -67,7 +67,7 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+  .nav-right { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
   .nav-right a {
     font-size: 0.875rem;
     color: var(--muted);
@@ -75,6 +75,7 @@
     transition: color 0.2s;
   }
   .nav-right a:hover { color: var(--cyan); }
+  .nav-right a.active { color: var(--cyan); }
 
   /* PAGE */
   .page-wrap {
@@ -296,10 +297,11 @@
     <span class="logo-name">PAISync</span>
   </a>
   <div class="nav-right">
+    <a href="/about" class="active">About</a>
     <a href="/privacy">Privacy</a>
     <a href="/terms">Terms</a>
     <a href="/contact">Contact</a>
-    <a href="/">← Back to home</a>
+    <a href="/">← Home</a>
   </div>
 </nav>
 
