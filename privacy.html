@@ -286,7 +286,7 @@
   <div class="legal-header">
     <div class="legal-tag">Legal</div>
     <h1>Privacy Policy</h1>
-    <p style="color:var(--muted);font-size:0.95rem;margin-bottom:0;">PAISync, Inc. ("PAISync," "we," "our," or "us") operates an AI-powered advertising optimization platform that connects to third-party advertising platforms on behalf of our customers ("Advertisers"). This Privacy Policy explains what data we collect, how we use it, who we share it with, and your rights. By using PAISync, you agree to this policy.</p>
+    <p style="color:var(--muted);font-size:0.95rem;margin-bottom:0;">PAISync ("PAISync," "we," "our," or "us") operates an AI-powered advertising optimization platform that connects to third-party advertising platforms on behalf of our customers ("Advertisers"). This Privacy Policy explains what data we collect, how we use it, who we share it with, and your rights. By using PAISync, you agree to this policy.</p>
     <div class="legal-meta">
       <span><strong>Effective Date:</strong> April 1, 2026</span>
       <span><strong>Last Updated:</strong> April 15, 2026</span>
@@ -299,7 +299,7 @@
   </div>
 
   <div class="callout" style="background:rgba(0,229,255,0.08);border-color:rgba(0,229,255,0.28);">
-    <strong>Google API Services — Limited Use Disclosure:</strong> PAISync's use and transfer of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements. Data obtained via the Google Ads API is used exclusively to provide the campaign management and optimization features that are prominent in PAISync's user interface, on Google Ads. We do not use this data to train machine learning or AI models, do not transfer it to third parties, and do not use it for advertising on other platforms.
+    <strong>Google API Services — Limited Use Disclosure:</strong> PAISync's use and transfer of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements. Data obtained via the Google Ads API — including performance data, reach forecasts, and audience/keyword estimation data — is used exclusively to provide the campaign planning, reporting, management, and optimization features that are prominent in PAISync's user interface, on Google Ads. We do not use this data to train machine learning or AI models, do not transfer it to third parties, and do not use it for advertising on other platforms.
   </div>
 
   <div class="callout" style="background:rgba(162,89,255,0.06);border-color:rgba(162,89,255,0.22);">
@@ -323,6 +323,7 @@
         <li>Spend, impression, click, conversion, and ROAS data pulled via platform APIs</li>
         <li>Bid strategy settings, budget allocation rules, and optimization parameters</li>
         <li>Attribution data and conversion events as reported by connected platforms</li>
+        <li>Reach forecasts, audience size estimates, keyword forecasts, and other planning/estimation data returned by platform planning APIs (e.g., Google Ads ReachPlanService, KeywordPlanIdeaService, AudienceInsightsService)</li>
         <li>Platform-level audience identifiers (hashed — we never receive raw PII about end-consumers from ad platforms)</li>
       </ul>
       <p><strong class="hl">Usage &amp; Technical Data</strong></p>
@@ -343,7 +344,7 @@
         <li>To comply with legal obligations and enforce our Terms of Service</li>
         <li>To improve platform reliability and performance using anonymized, aggregated operational metrics (e.g., API response times, error rates) — <strong class="hl">never</strong> using raw advertising campaign data or data obtained from third-party platform APIs for this purpose</li>
       </ul>
-      <p>We do <strong class="hl">not</strong> sell your data to third parties. We do <strong class="hl">not</strong> use data obtained from advertising platform APIs (including Google Ads, Meta, TikTok, or any other connected platform) to train machine learning or AI models. Advertising performance data accessed via platform APIs is used exclusively to provide the campaign management and optimization services described herein.</p>
+      <p>We do <strong class="hl">not</strong> sell your data to third parties. We do <strong class="hl">not</strong> use data obtained from advertising platform APIs (including Google Ads, Meta, TikTok, or any other connected platform) to train machine learning or AI models. Advertising performance data, reach forecasts, and audience/keyword estimation data accessed via platform APIs are used exclusively to provide the campaign planning, reporting, management, and optimization services described herein.</p>
     </div>
 
     <div class="legal-section">
@@ -351,6 +352,7 @@
       <p>PAISync connects to third-party ad platforms via their official APIs using OAuth tokens you grant us. By connecting a platform, you authorize PAISync to:</p>
       <ul>
         <li>Read campaign performance data from that platform</li>
+        <li>Read reach forecasts, audience size estimates, and keyword planning data to support pre-launch planning views and optimization decisions</li>
         <li>Create, modify, pause, and delete campaigns on your behalf</li>
         <li>Adjust bids, budgets, and targeting settings as directed by our AI optimization engine</li>
       </ul>
@@ -367,7 +369,7 @@
 
     <div class="legal-section">
       <div class="section-heading"><span class="section-num">4</span> Advertising Platform API Compliance</div>
-      <p>PAISync accesses third-party advertising platforms exclusively through their official, authorized APIs. Our use of data obtained through these APIs is strictly limited to providing the campaign management and optimization services described in this policy. We do not use platform API data for any secondary purpose.</p>
+      <p>PAISync accesses third-party advertising platforms exclusively through their official, authorized APIs. Our use of data obtained through these APIs is strictly limited to providing the campaign planning, reporting, management, and optimization services described in this policy. This includes performance data, reach forecasts (e.g., from Google Ads ReachPlanService), and audience/keyword estimation data (e.g., from Google Ads KeywordPlanIdeaService and AudienceInsightsService). We do not use platform API data for any secondary purpose.</p>
 
       <p><strong class="hl">Google API Services:</strong> PAISync's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including its Limited Use requirements. Data obtained via the Google Ads API is used solely to manage and optimize advertising campaigns on behalf of our customers and for no other purpose.</p>
 
@@ -466,7 +468,7 @@
       <div class="section-heading"><span class="section-num">12</span> Contact Us</div>
       <p>For any privacy-related questions, data requests, or concerns, please reach out to our Privacy Team:</p>
       <div class="callout">
-        <strong>PAISync, Inc. — Privacy Team</strong><br>
+        <strong>PAISync — Privacy Team</strong><br>
         142 N. Milpitas Blvd #169, Milpitas, CA 95035, USA<br>
         Email: <a href="mailto:privacy@paisync.com">privacy@paisync.com</a><br>
         Response time: within 2 business days for general inquiries, within 30 days for formal data requests
@@ -477,13 +479,13 @@
 
   <div class="legal-foot">
     This policy applies to the PAISync platform and website at paisync.com.<br>
-    © 2026 PAISync, Inc. All rights reserved. &nbsp;·&nbsp; <a href="/terms">Terms of Service</a>
+    © 2026 PAISync. All rights reserved. &nbsp;·&nbsp; <a href="/terms">Terms of Service</a>
   </div>
 
 </div>
 
 <footer>
-  <div>© 2026 PAISync, Inc. All rights reserved.</div>
+  <div>© 2026 PAISync. All rights reserved.</div>
   <div class="footer-links">
     <a href="/">Home</a>
     <a href="/about">About Us</a>
