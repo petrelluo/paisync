@@ -71,6 +71,21 @@
   }
   .nav-back:hover { color: var(--cyan); }
 
+  /* Extra nav links */
+  .legal-nav-right { display: flex; align-items: center; gap: 1.4rem; flex-wrap: wrap; }
+  .legal-nav-right a {
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .legal-nav-right a:hover { color: var(--cyan); }
+  .legal-nav-right a.active { color: var(--cyan); }
+  @media (max-width: 600px) {
+    .legal-nav-right { gap: 0.9rem; }
+    .legal-nav-right a { font-size: 0.78rem; }
+  }
+
   /* MAIN */
   main {
     flex: 1;
@@ -291,7 +306,13 @@
     </svg>
     <span class="logo-name">PAISync</span>
   </a>
-  <a href="/" class="nav-back">← Back to home</a>
+  <div class="legal-nav-right">
+    <a href="/about">About</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="/contact" class="active">Contact</a>
+    <a href="/">← Home</a>
+  </div>
 </nav>
 
 <main>
@@ -419,6 +440,7 @@
   <div>© 2026 PAISync, Inc. · 142 N. Milpitas Blvd #169, Milpitas, CA 95035</div>
   <div class="footer-links">
     <a href="/">Home</a>
+    <a href="/about">About</a>
     <a href="/privacy">Privacy Policy</a>
     <a href="/terms">Terms of Service</a>
     <a href="/contact">Contact</a>

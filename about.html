@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — PAISync</title>
+<meta name="description" content="About PAISync — a B2B SaaS company building AI-powered advertising optimization tools. Headquartered in Milpitas, California, we serve performance marketing teams worldwide.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://paisync.com/about">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://paisync.com/about">
+<meta property="og:title" content="About Us — PAISync">
+<meta property="og:description" content="B2B SaaS company building AI-powered advertising optimization tools for performance marketing teams.">
+<meta property="og:site_name" content="PAISync">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #060912;
+    --bg2: #0b1120;
+    --bg3: #0f1829;
+    --cyan: #00e5ff;
+    --purple: #a259ff;
+    --text: #e8edf8;
+    --muted: #6b7a99;
+    --border: rgba(0,229,255,0.12);
+    --card: rgba(15,24,41,0.9);
+    --gradient: linear-gradient(135deg, #00e5ff, #a259ff);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 5%;
+    background: rgba(6,9,18,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+  }
+  .logo-svg { width: 38px; height: 38px; }
+  .logo-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+  .nav-right a {
+    font-size: 0.875rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-right a:hover { color: var(--cyan); }
+
+  /* PAGE */
+  .page-wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 4rem 5% 6rem;
+  }
+
+  .page-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--cyan);
+    background: rgba(0,229,255,0.08);
+    border: 1px solid rgba(0,229,255,0.18);
+    padding: 0.28rem 0.85rem;
+    border-radius: 50px;
+    margin-bottom: 1.2rem;
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .page-sub {
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 3rem;
+    max-width: 680px;
+  }
+
+  h2 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--text);
+    margin: 2.8rem 0 1rem;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+  }
+
+  a { color: var(--cyan); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .section {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .section:last-of-type { border-bottom: none; }
+
+  /* CARDS GRID */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  @media (max-width: 720px) {
+    .cards-grid { grid-template-columns: 1fr; }
+  }
+
+  .info-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.6rem;
+    transition: border-color 0.2s;
+  }
+  .info-card:hover { border-color: rgba(0,229,255,0.25); }
+
+  .info-card .icon { font-size: 1.6rem; margin-bottom: 0.8rem; }
+
+  /* ADDRESS BLOCK */
+  .address-block {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.6rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .address-block svg { color: var(--cyan); flex-shrink: 0; margin-top: 2px; }
+  .address-block strong {
+    display: block;
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+  .address-block .addr-body {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* API CALLOUT */
+  .api-callout {
+    background: rgba(0,229,255,0.05);
+    border: 1px solid rgba(0,229,255,0.15);
+    border-radius: 12px;
+    padding: 1.4rem 1.5rem;
+    margin: 2rem 0;
+  }
+  .api-callout h3 { color: var(--text); margin-bottom: 0.6rem; }
+  .api-callout p {
+    font-size: 0.9rem;
+    line-height: 1.75;
+    margin-bottom: 0;
+  }
+
+  /* CTA */
+  .cta-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.6rem;
+    border-radius: 8px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s;
+  }
+  .btn-primary {
+    background: var(--cyan);
+    color: var(--bg);
+    box-shadow: 0 0 30px rgba(0,229,255,0.2);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 50px rgba(0,229,255,0.35);
+    text-decoration: none;
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .btn-outline:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+    text-decoration: none;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--cyan); }
+  .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+  @media (max-width: 600px) {
+    .nav-right { gap: 1rem; }
+    .nav-right a { font-size: 0.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <svg class="logo-svg" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="lg1" x1="0" y1="0" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#00e5ff"/>
+          <stop offset="100%" stop-color="#a259ff"/>
+        </linearGradient>
+      </defs>
+      <path d="M21 2L38 11.5V30.5L21 40L4 30.5V11.5L21 2Z" stroke="url(#lg1)" stroke-width="1.5" fill="none" opacity="0.6"/>
+      <circle cx="21" cy="21" r="8" fill="url(#lg1)" opacity="0.15"/>
+      <path d="M14 14H21C23.8 14 26 16.2 26 19C26 21.8 23.8 24 21 24H14V28" stroke="url(#lg1)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path d="M30 14L33 17L30 20" stroke="#00e5ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M12 22L9 25L12 28" stroke="#a259ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="21" cy="19" r="2" fill="url(#lg1)"/>
+    </svg>
+    <span class="logo-name">PAISync</span>
+  </a>
+  <div class="nav-right">
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="/contact">Contact</a>
+    <a href="/">← Back to home</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="page-tag">About Us</div>
+  <h1>About PAISync</h1>
+  <p class="page-sub">PAISync is an AI-powered advertising optimization platform built for performance marketers. We are headquartered in Milpitas, California, and serve customers globally.</p>
+
+  <!-- ── COMPANY OVERVIEW ── -->
+  <div class="section">
+    <h2>Who We Are</h2>
+    <p>PAISync, Inc. is a B2B SaaS company that builds autonomous AI agents for digital advertising professionals. Our platform connects to the world's leading advertising networks — including Google Ads, Meta, TikTok, LinkedIn, and Amazon DSP — and uses machine learning to continuously optimize campaign performance on behalf of our customers.</p>
+    <p>We were founded with a single mission: eliminate the manual, repetitive work of managing paid media so that marketing teams can focus on strategy, creativity, and growth. PAISync's AI engine monitors performance signals 24/7, autonomously reallocating budgets, adjusting bids, and testing creatives to maximize return on ad spend (ROAS).</p>
+  </div>
+
+  <!-- ── WHO WE SERVE ── -->
+  <div class="section">
+    <h2>Who We Serve</h2>
+    <p>Our customers range from direct-to-consumer brands and e-commerce operators to full-service digital agencies managing portfolios of client accounts. PAISync is built for teams that need to move fast, optimize continuously, and report clearly — without hiring a dedicated ops team for every platform.</p>
+    <p>PAISync is a commercial, login-based SaaS platform. Our service is sold to external paying customers (businesses and agencies). We do not operate a consumer service and do not collect data from the general public.</p>
+  </div>
+
+  <!-- ── WHAT WE DO ── -->
+  <div class="section">
+    <h2>What the Platform Does</h2>
+    <div class="cards-grid">
+      <div class="info-card">
+        <div class="icon">🎯</div>
+        <h3>Our Mission</h3>
+        <p style="margin:0;">To make enterprise-grade advertising automation accessible to every performance marketing team — so great products can reach the audiences that need them, efficiently and at scale.</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">🤖</div>
+        <h3>What We Build</h3>
+        <p style="margin:0;">An autonomous AI optimization layer that sits above your existing ad accounts. PAISync reads performance data via official platform APIs, identifies opportunities in real time, and executes changes — budget shifts, bid adjustments, creative rotations — within the guardrails you define.</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">🔒</div>
+        <h3>How We Handle Data</h3>
+        <p style="margin:0;">We process advertising performance data strictly on behalf of our customers. We do not sell data, do not use it for cross-customer targeting, and maintain industry-standard security controls including TLS 1.3 encryption, AES-256 data at rest, and OAuth 2.0 API access. Read our full <a href="/privacy">Privacy Policy</a> for details.</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">📍</div>
+        <h3>Where We Operate</h3>
+        <p style="margin:0;">PAISync is incorporated in the United States and serves customers globally. Our infrastructure is hosted on AWS with primary operations in the US. We comply with applicable data protection regulations including CCPA and GDPR.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── OPERATING PRINCIPLES ── -->
+  <div class="section">
+    <h2>How We Operate</h2>
+    <p>We operate under the principles of transparency, security, and customer control. Advertisers retain full ownership of their campaign data, and our platform accesses ad platform APIs exclusively through OAuth 2.0 — meaning we never store passwords or access credentials. Customers can revoke PAISync's access to any connected platform at any time, either from within PAISync or directly from the platform's own security settings.</p>
+  </div>
+
+  <!-- ── ADVERTISING PLATFORM API USAGE ── -->
+  <div class="section">
+    <h2>How PAISync Uses Advertising Platform APIs</h2>
+    <div class="api-callout">
+      <h3>🔗 Platform API Transparency</h3>
+      <p>PAISync connects to Google Ads, Meta, TikTok, LinkedIn, and Amazon DSP exclusively through their official OAuth 2.0 APIs. We access your ad account data solely to deliver campaign management and optimization services on your behalf. We do not sell your data, do not use platform API data to train AI models, and do not share your campaign data with any third party except as required to operate the service.</p>
+    </div>
+    <p><strong style="color:var(--text);">Data stays on the platform it came from.</strong> Data obtained from a single advertising platform API (e.g., Google Ads, Meta, TikTok) is used solely to manage and optimize campaigns on that same platform. We do not use Google Ads data to optimize Meta or TikTok campaigns, and vice versa. Cross-platform data is never combined for model training, audience creation, or targeting external platforms. The only cross-platform aggregation we perform is presenting a unified reporting view to the account holder who authorized access to each platform.</p>
+    <p>PAISync's use of Google API data adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements. Our use of Meta Marketing API data complies with the <a href="https://developers.facebook.com/terms/" target="_blank" rel="noopener">Meta Platform Terms</a>. Our integration with TikTok's Marketing API operates in compliance with the <a href="https://www.tiktok.com/legal/page/global/tik-tok-developer-terms-of-service/en" target="_blank" rel="noopener">TikTok Developer Terms of Service</a>. Full details are in our <a href="/privacy">Privacy Policy</a>.</p>
+  </div>
+
+  <!-- ── HEADQUARTERS ── -->
+  <div class="section">
+    <h2>Headquarters &amp; Contact</h2>
+    <div class="address-block">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <div class="addr-body">
+        <strong>PAISync, Inc. — Headquarters</strong>
+        142 N. Milpitas Blvd #169<br>
+        Milpitas, CA 95035<br>
+        United States<br>
+        <a href="mailto:hello@paisync.com">hello@paisync.com</a>
+      </div>
+    </div>
+
+    <p>Role-based contact addresses for specific inquiries:</p>
+    <ul style="list-style:none;padding:0;margin:0 0 1.2rem 0;color:var(--muted);font-size:0.9rem;line-height:2;">
+      <li><strong style="color:var(--text);font-weight:600;">General:</strong> <a href="mailto:hello@paisync.com">hello@paisync.com</a> · <a href="mailto:contact@paisync.com">contact@paisync.com</a></li>
+      <li><strong style="color:var(--text);font-weight:600;">Privacy:</strong> <a href="mailto:privacy@paisync.com">privacy@paisync.com</a></li>
+      <li><strong style="color:var(--text);font-weight:600;">Legal:</strong> <a href="mailto:legal@paisync.com">legal@paisync.com</a></li>
+      <li><strong style="color:var(--text);font-weight:600;">Business &amp; partnerships:</strong> <a href="mailto:admin@paisync.com">admin@paisync.com</a></li>
+      <li><strong style="color:var(--text);font-weight:600;">Careers:</strong> <a href="mailto:hr@paisync.com">hr@paisync.com</a></li>
+    </ul>
+
+    <div class="cta-row">
+      <a href="/contact" class="btn btn-primary">Get in touch →</a>
+      <a href="/" class="btn btn-outline">Back to home</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div>© 2026 PAISync, Inc. · 142 N. Milpitas Blvd #169, Milpitas, CA 95035</div>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/privacy">Privacy Policy</a>
+    <a href="/terms">Terms of Service</a>
+    <a href="/contact">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>

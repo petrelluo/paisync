@@ -331,6 +331,41 @@
     text-align: center;
   }
 
+  .frame-tag {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    background: rgba(255,183,0,0.08);
+    border: 1px solid rgba(255,183,0,0.25);
+    padding: 0.22rem 0.6rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .dashboard-frame {
+    position: relative;
+  }
+
+  .dashboard-example-ribbon {
+    position: absolute;
+    top: 52px;
+    right: 12px;
+    z-index: 2;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--amber);
+    background: rgba(255,183,0,0.1);
+    border: 1px solid rgba(255,183,0,0.3);
+    padding: 0.28rem 0.7rem;
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
   .dashboard-body {
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -1295,7 +1330,7 @@
     <li><a href="#how">How It Works</a></li>
     <li><a href="#platforms">Platforms</a></li>
     <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#about">About</a></li>
+    <li><a href="/about">About</a></li>
     <li><a href="/contact">Contact</a></li>
     <li><a href="/privacy">Privacy</a></li>
     <li><a href="/terms">Terms</a></li>
@@ -1348,6 +1383,7 @@
             <span></span><span></span><span></span>
           </div>
           <div class="frame-url">app.paisync.com — Campaign Dashboard</div>
+          <div class="frame-tag" title="This is a sample dashboard mockup. Figures shown are illustrative and do not represent real customer data.">Example UI</div>
         </div>
         <div class="dashboard-body">
           <div class="dash-sidebar">
@@ -1422,6 +1458,7 @@
           </div>
         </div>
       </div>
+      <p style="text-align:center;font-size:0.75rem;color:var(--muted);margin-top:0.9rem;letter-spacing:0.02em;">Illustrative product UI — figures shown are sample data, not real customer results.</p>
     </div>
   </div>
 </section>
@@ -1782,28 +1819,26 @@
         <li><a href="#features">Features</a></li>
         <li><a href="#platforms">Integrations</a></li>
         <li><a href="#pricing">Pricing</a></li>
-        <li><a href="/coming-soon?page=docs">Documentation</a></li>
-        <li><a href="/coming-soon?page=api">API Reference</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Request a Demo</a></li>
       </ul>
     </div>
 
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="/coming-soon?page=blog">Blog</a></li>
-        <li><a href="/coming-soon?page=careers">Careers</a></li>
+        <li><a href="/about">About Us</a></li>
         <li><a href="/contact">Press &amp; Media</a></li>
         <li><a href="/contact">Contact</a></li>
+        <li><a href="mailto:hr@paisync.com">Careers</a></li>
       </ul>
     </div>
 
     <div class="footer-col">
       <h4>Resources</h4>
       <ul>
-        <li><a href="/coming-soon?page=docs">Documentation</a></li>
-        <li><a href="/coming-soon?page=api">API Reference</a></li>
-        <li><a href="/coming-soon?page=blog">Blog</a></li>
+        <li><a href="/contact">Product Documentation</a></li>
+        <li><a href="/contact">API Access Inquiries</a></li>
         <li><a href="/contact">Support</a></li>
       </ul>
     </div>
